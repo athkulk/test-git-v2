@@ -1,0 +1,7 @@
+# {"S3-task":{"x":346,"y":208}}
+dobi-s3-list:
+  dag_id: dobi-s3-list
+  tasks:
+    S3-task:
+      operator: airflow.providers.amazon.aws.operators.s3.S3ListOperator
+      bucket: amazon-sagemaker-911027631934-us-west-2-0fa851ce5ae4
