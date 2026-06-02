@@ -1,7 +1,0 @@
-# {"Notebook-task":{"x":319,"y":256}}
-not-migrated-git-test:
-  dag_id: not-migrated-git-test
-  tasks:
-    Notebook-task:
-      operator: >-
-        airflow.providers.amazon.aws.operators.sagemaker_unified_studio.SageMakerNotebookOperator
