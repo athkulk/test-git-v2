@@ -1,0 +1,14 @@
+# {"Notebook-task":{"x":457,"y":224}}
+0306-serverless-test:
+  dag_id: 0306-serverless-test
+  tasks:
+    Notebook-task:
+      operator: >-
+        airflow.providers.amazon.aws.operators.sagemaker_unified_studio.SageMakerNotebookOperator
+      input_config:
+        input_params: {}
+        input_path: getting_started.ipynb
+      compute: {}
+      output_config:
+        output_formats:
+          - NOTEBOOK
