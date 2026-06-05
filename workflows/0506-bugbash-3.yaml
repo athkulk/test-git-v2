@@ -1,4 +1,4 @@
-# {"Notebook-task":{"x":514,"y":206}}
+# {"Notebook-task":{"x":514,"y":206},"Glue-task":{"x":720.5,"y":305}}
 0506-bugbash-3:
   dag_id: 0506-bugbash-3
   tasks:
@@ -12,3 +12,8 @@
       output_config:
         output_formats:
           - NOTEBOOK
+    Glue-task:
+      dependencies:
+        - Notebook-task
+      operator: airflow.providers.amazon.aws.operators.glue.GlueJobOperator
+      job_name: test-vetl
