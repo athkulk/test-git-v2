@@ -1,0 +1,105 @@
+{
+  "JobName": "VETL",
+  "bucketName": "amazon-sagemaker-536697244724-eu-west-3-18896b39f4d8",
+  "formInput": {
+    "FileName": "VETL",
+    "ContentType": "text/x-python",
+    "Body": "import sys\nfrom pyspark.context import SparkContext\nfrom pyspark.sql import SparkSession\n\nsc = SparkContext.getOrCreate()\nspark = SparkSession.builder.getOrCreate()\n\n\n"
+  },
+  "JobUpdate": {
+    "Name": "VETL",
+    "Timeout": 480,
+    "WorkerType": "G.1X",
+    "NumberOfWorkers": 10,
+    "GlueVersion": "5.1",
+    "MaxRetries": 0,
+    "Role": "arn:aws:iam::536697244724:role/datazone_usr_role_cz55jg9r9q8g7o_624r4bmob27c44",
+    "JobMode": "VISUAL",
+    "JobRunQueuingEnabled": false,
+    "ExecutionProperty": {
+      "MaxConcurrentRuns": 1
+    },
+    "ExecutionClass": "STANDARD",
+    "NonOverridableArguments": {},
+    "Connections": {
+      "Connections": [
+        "datazone-glue-network-connection-subnet-03f67e684556e5be2-cz55jg9r9q8g7o-dev",
+        "datazone-glue-network-connection-subnet-0d3dfbb4d8f942ec6-cz55jg9r9q8g7o-dev",
+        "datazone-glue-network-connection-subnet-084a3c74b07842d4e-cz55jg9r9q8g7o-dev"
+      ]
+    },
+    "DefaultArguments": {
+      "--enable-lakeformation-fine-grained-access": "false",
+      "--job-language": "python",
+      "--TempDir": "s3://amazon-sagemaker-536697244724-eu-west-3-18896b39f4d8/dzd-axq8xtg57h707o/cz55jg9r9q8g7o/sys/glue/temp/",
+      "--enable-metrics": "true",
+      "--enable-observability-metrics": "false",
+      "--spark-event-logs-path": "s3://amazon-sagemaker-536697244724-eu-west-3-18896b39f4d8/dzd-axq8xtg57h707o/cz55jg9r9q8g7o/sys/glue/spark/",
+      "--enable-glue-datacatalog": "true",
+      "--enable-spark-ui": "true",
+      "--enable-auto-scaling": "true",
+      "--smus-job-compute": "project.spark.compatibility",
+      "--smus-orig-asset": "jobs/VETL/VETL.vetl",
+      "--conf": "spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions --conf spark.datasource.redshift.community.glue_endpoint=https://glue.eu-west-3.amazonaws.com --conf spark.datasource.redshift.community.data_api_endpoint=https://redshift-data.eu-west-3.amazonaws.com --conf spark.hadoop.fs.s3.impl=com.amazon.ws.emr.hadoop.fs.EmrFileSystem --conf spark.driver.maxResultSize=0 --conf spark.sql.catalog.spark_catalog=org.apache.iceberg.spark.SparkSessionCatalog --conf spark.sql.catalog.spark_catalog.catalog-impl=org.apache.iceberg.aws.glue.GlueCatalog --conf spark.sql.catalog.spark_catalog.glue.id=536697244724 --conf spark.sql.catalog.spark_catalog.glue.account-id=536697244724 --conf spark.sql.catalog.spark_catalog.glue.endpoint=https://glue.eu-west-3.amazonaws.com --conf spark.sql.catalog.spark_catalog.client.region=eu-west-3 --conf spark.extraListeners=io.openlineage.spark.agent.OpenLineageSparkListener --conf spark.openlineage.transport.type=amazon_datazone_api --conf spark.openlineage.transport.domainId=dzd-axq8xtg57h707o --conf spark.openlineage.columnLineage.datasetLineageEnabled=True --conf spark.openlineage.facets.custom_environment_variables=[AWS_DEFAULT_REGION;GLUE_VERSION;GLUE_COMMAND_CRITERIA;GLUE_PYTHON_VERSION;] --conf spark.glue.accountId=536697244724 --conf spark.glue.JOB_NAME=VETL --conf spark.hadoop.fs.s3.credentialsResolverClass=com.amazonaws.glue.accesscontrol.AWSLakeFormationCredentialResolver --conf spark.hadoop.fs.s3.useDirectoryHeaderAsFolderObject=true --conf spark.hadoop.fs.s3.folderObject.autoAction.disabled=true --conf spark.sql.catalog.createDirectoryAfterTable.enabled=true --conf spark.sql.catalog.dropDirectoryBeforeTable.enabled=true --conf spark.sql.catalog.spark_catalog.glue.lakeformation-enabled=true --conf spark.sql.catalog.skipLocationValidationOnCreateTable.enabled=true",
+      "--custom-logGroup-prefix": "datazone-cz55jg9r9q8g7o-dev",
+      "author": "arn:aws:iam::536697244724:role/Admin"
+    },
+    "connection": {
+      "configurations": [
+        {
+          "classification": "GlueDefaultArgument",
+          "properties": {
+            "--enable-lakeformation-fine-grained-access": "false"
+          }
+        }
+      ],
+      "domainIdentifier": "dzd-axq8xtg57h707o",
+      "projectIdentifier": "cz55jg9r9q8g7o",
+      "environmentIdentifier": "624r4bmob27c44",
+      "connectionIdentifier": "d5ulnq0hu2jfdg",
+      "name": "project.spark.compatibility",
+      "displayType": "Glue (Spark)",
+      "type": "SPARK",
+      "authorizationMode": "PROJECT",
+      "provisioningType": "MANAGED",
+      "createdAt": "2026-07-21T20:50:32.765Z",
+      "updatedAt": "2026-07-21T20:50:32.765Z",
+      "location": {
+        "awsRegion": "eu-west-3",
+        "awsAccountId": "536697244724"
+      },
+      "physicalEndpoints": [
+        {
+          "awsLocation": {
+            "awsAccountId": "536697244724",
+            "awsRegion": "eu-west-3"
+          },
+          "glueConnectionName": "datazone-glue-network-connection-subnet-03f67e684556e5be2-cz55jg9r9q8g7o-dev",
+          "glueConnectionNames": [
+            "datazone-glue-network-connection-subnet-03f67e684556e5be2-cz55jg9r9q8g7o-dev",
+            "datazone-glue-network-connection-subnet-0d3dfbb4d8f942ec6-cz55jg9r9q8g7o-dev",
+            "datazone-glue-network-connection-subnet-084a3c74b07842d4e-cz55jg9r9q8g7o-dev"
+          ]
+        }
+      ],
+      "sparkGlueProperties": {
+        "glueConnection": {},
+        "sessionConfigs": {
+          "idle_timeout": 60,
+          "glue_version": "5.0",
+          "worker_type": "G.1X",
+          "number_of_workers": 10
+        }
+      }
+    },
+    "Command": {
+      "Name": "glueetl",
+      "ScriptLocation": "s3://amazon-sagemaker-536697244724-eu-west-3-18896b39f4d8/dzd-axq8xtg57h707o/cz55jg9r9q8g7o/shared/jobs/VETL/VETL.py",
+      "PythonVersion": "3.9"
+    },
+    "Tags": {
+      "AmazonDataZoneProject": "cz55jg9r9q8g7o",
+      "AmazonDataZoneUsername": "arn:aws:iam::536697244724:role/Admin"
+    }
+  }
+}
